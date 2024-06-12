@@ -1,0 +1,221 @@
+:root {
+    /* Colors: */
+    --unnamed-color-4e8eb5: #4E8EB5;
+    --unnamed-color-3dcbd1: #3DCBD1;
+    --unnamed-color-ef978e: #EF978E;
+    --unnamed-color-84d03f: #84D03F;
+    --unnamed-color-83a7d5: #83A7D5;
+    --unnamed-color-e7e7e7: #E7E7E7;
+    --unnamed-color-d8d2ff: #D8D2FF;
+    --unnamed-color-c4c4c4: #C4C4C4;
+    --unnamed-color-909096: #909096;
+    --unnamed-color-3e4347: #3E4347;
+    --unnamed-color-000000: #000000;
+    --unnamed-color-ffffff: #FFFFFF;
+
+    /* Font/text values */
+    --unnamed-font-family-poppins: Poppins;
+    --unnamed-font-style-normal: normal;
+    --unnamed-font-weight-bold: bold;
+    --unnamed-font-weight-normal: normal;
+    --unnamed-font-size-14: 14px;
+    --unnamed-font-size-24: 24px;
+    --unnamed-character-spacing-0: 0px;
+    --unnamed-line-spacing-14: 14px;
+    --unnamed-line-spacing-24: 24px;
+}
+    
+/* Character Styles */
+.unnamed-character-style-1 {
+    font-family: var(--unnamed-font-family-poppins);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-bold);
+    font-size: var(--unnamed-font-size-24);
+    line-height: var(--unnamed-line-spacing-24);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-4e8eb5);
+}
+
+.unnamed-character-style-2 {
+
+    font-family: var(--unnamed-font-family-poppins);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-14);
+    line-height: var(--unnamed-line-spacing-14);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-909096);
+
+}
+
+.navbar-header{
+    position: fixed;
+    width: 100%;
+    height: 85px;
+    z-index: 100;
+    padding:20px;
+}
+
+.title-system{    
+    font-weight: normal;
+    font-size: 25px;       
+}
+
+.img-logo{
+    width: 120px;
+}
+
+.ico-notification{
+    margin: 0 20px;
+    width: 20px;
+}
+
+.ico-status-server{
+    margin: 0 10px;
+    width: 20px;
+}
+
+.ico-logout{
+    margin: 0 10px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.ico-logout:hover{
+    background-color: #c1cdd846;
+    width: 25px;
+}
+
+.status-server{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #88c08a
+}
+
+.name-user{
+    top: 30px;
+    left: 1263px;
+    width: 48px;
+    height: 20px;
+    /* UI Properties */
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-14)/21px var(--unnamed-font-family-poppins);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-000000);
+    text-align: left;
+    font: normal normal bold 14px/21px Poppins-Bold;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 0.6;
+}
+
+.navbar-header > .header-content-left > span{
+    font-size: 22px;
+}
+
+.img-user{
+    cursor: pointer;
+    width:45px;
+}
+
+.img-user-pointer{
+    cursor: pointer;
+    width:14px;
+}
+
+.img-sidebar{
+    cursor: pointer;
+    margin:0 40px;
+}
+
+.dropdown-container {
+    width: 145px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+    border-radius: 5px;
+}
+
+.r-12 {
+    right: 0px;
+}
+
+.dropdown-container > ul > li > div> span{
+    font-size: 14px;
+    color: #73818F;
+    // font-family: 'HP Simplified';
+    cursor: pointer;
+}
+
+@media (max-width: 991.98px) { 
+    .img-logo{
+        width: 40px;
+    }
+
+    .title-system{    
+        font-weight: normal;
+        font-size: 25px;       
+    }
+
+    .img-sidebar{
+        margin:0 10px;
+    }
+
+    .ico-notification{
+        margin: 0 20px;
+        width: 20px;
+    }
+    
+    .ico-status-server{
+        margin: 0 10px;
+        width: 20px;
+
+    }
+
+    .img-user{
+        width:40px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .img-logo{
+        width: 35px;
+    }
+
+    .title-system{    
+        font-weight: normal;
+        font-size: 25px;       
+    }
+
+    .ico-notification{
+        margin: 0 10px;
+        width: 18px;
+    }
+    
+    .ico-status-server{
+        margin: 0 10px;
+        width: 18px;
+    }
+
+    .img-user{
+        width:35px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .img-logo{
+        width: 35px;
+    }
+
+    .title-system{    
+        font-weight: normal;
+        font-size: 25px;       
+    }
+
+    .navbar-header{    
+    padding:0;
+    }
+
+    .img-user{        
+        width:35px;
+    }
+}

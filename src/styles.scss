@@ -1,0 +1,499 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$lhasa-frontend-web-primary: mat.define-palette(mat.$indigo-palette);
+$lhasa-frontend-web-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$lhasa-frontend-web-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$lhasa-frontend-web-theme: mat.define-light-theme((
+  color: (
+    primary: $lhasa-frontend-web-primary,
+    accent: $lhasa-frontend-web-accent,
+    warn: $lhasa-frontend-web-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($lhasa-frontend-web-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+@font-face {
+    font-family: "HP Simplified";
+    src: url(assets/fonts/hp-simplified-556.ttf);
+  }
+  
+  @font-face {
+    font-family: "HP Simplified 265";
+    src: url(assets/fonts/hp-simplified-265.ttf);
+  }
+  
+  @font-face {
+    font-family: "HP Simplified Regular";
+    src: url(assets/fonts/hp-simplified-265.ttf);    
+  }
+  
+  @font-face {
+    font-family: "HP Simplified Italic";
+    src: url(assets/fonts/hp-simplified-652.ttf);    
+  }
+  
+  @font-face {
+    font-family: "HP Simplified Bold";
+    src: url(assets/fonts/hp-simplified-556.ttf);    
+  }
+  
+  @font-face {
+    font-family: "HP Simplified Bold Italic";
+    src: url(assets/fonts/hp-simplified-990.ttf);     
+  }
+  
+  @font-face {
+    font-family: "HP Simplified Light";
+    src: url(assets/fonts/hp-simplified-light.ttf);     
+  }
+
+  @font-face {
+    font-family: "Poppins";
+    src: url(assets/fonts/poppins/Poppins-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: "Poppins-Bold";
+    src: url(assets/fonts/poppins/Poppins-Bold.ttf);
+  }
+  
+*{
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: normal;
+}
+
+body{
+  background: #E7E7E7;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+ 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ACD3E3; 
+
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #99BCCA; 
+}
+
+//pagination styles
+.pagination {
+  background-color: $white;
+}
+
+.page-link {
+  font-weight: 300;
+  background-color: transparent;
+  letter-spacing: normal;
+  text-align: center;
+  color: $dark;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.current > .page-item > .page-link {
+  color: $white;
+}
+
+.custom-pagination > div.current {
+  background-color: #26679D;
+}
+
+.pagination-previous{
+  border: none !important;
+}
+
+
+.legend-chart-total {
+  background-color: #0C3661; 
+  color: #FFFFFF; 
+  padding: 6px 18px 6px 18px ; 
+  border-radius: 4px; 
+  // letter-spacing: 0.3px;
+  font-size: 14px;
+}
+
+snack-bar-container.success {
+  background-color: green;
+  color: white;
+  // min-height: 80px;
+}
+
+snack-bar-container.success button
+{
+  color: #FFFFFF;
+}
+
+snack-bar-container.error {
+  background-color: red;
+  color: white;
+}
+
+snack-bar-container.error button
+{
+  color: #FFFFFF;
+}
+
+ngx-skeleton-loader > span:last-child{
+  margin-bottom: 0 !important;
+}
+
+.input-circularity{
+  height: 42px;
+}
+
+.button-circularity{
+  height: 42px;
+  margin-right: 8px;;
+}
+
+.button-circularity:hover{
+  color: #FFFFFF;
+}
+
+.color-button-blue{
+  background-color: #4e8eb5;
+  color: #FFFFFF;
+}
+
+.color-button-red{
+  background-color: #b30a0aa4;
+  color: #FFFFFF;
+}
+
+.color-button-warning{
+  background-color: #00C92C;
+  color: #FFFFFF;
+}
+
+.content-circularity-box{
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 6px;
+  box-shadow: 0px 3px 6px #272D3B33;
+}
+
+.content-circularity-box span.title{
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: "Poppins-Bold";
+}
+
+.form-group label{
+  font-family: "Poppins";
+  color: #000000;
+  opacity: 0.6;
+}
+
+.table-box{
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px #272D3B33;
+}
+
+.table-box table{
+  margin-bottom: 0;
+}
+
+
+.table-box table thead th{
+  border-top-width: 0px; 
+}
+
+.custom-snackbar-container {
+  display: none;
+}
+
+.custom-snackbar-container.active {
+  display: flex;
+}
+
+.overlay{
+  position: fixed;
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.overlay > span{
+  color: #FFFFFF;
+  font-size: 24px;
+  letter-spacing: 0.5;
+}
+
+.modal-header .modal-title{
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: "Poppins-Bold";
+}
+
+table thead th{
+  font-family: 'Poppins-Bold';
+  text-transform: uppercase;
+}
+
+.new {
+  margin-right: 10px;
+  margin-top: -12px;
+}
+
+.section-circularity .title{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: "Poppins-Bold";
+}
+
+.section-circularity .filter{
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px #272D3B33;
+  padding: 15px;
+  margin-top: 15px;
+  display: flex;
+}
+
+.section-circularity .filter .title{
+  margin-right: 15px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.section-circularity .filter input{
+  margin-right: 15px;
+  // max-width: 500px;
+  
+}
+
+.section-circularity .skeleton{
+  margin-top: 15px;
+}
+
+.section-circularity .content .table-box{
+  background-color: #fff;
+}
+
+
+.space-chart{
+  margin: 15px 0;
+}
+
+
+.input-circularity-checkbox{
+  width: 40px;
+}
+
+.input-group-checkbox{
+  width: 40px;
+}
+
+.card.card-home{
+  cursor: pointer;
+  height: 140px;
+  
+}
+
+.card.card-home .card-body{
+  border-radius: 8px;
+}
+
+.card.card-home:hover{
+  background-color:#e0e0e0;
+  border: #fff;
+}
+
+.card.card-home .card-body > img{
+margin-bottom: 10px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+/****LOADING***/
+
+.loading{
+  
+  position: fixed;
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.85); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.loading .wrapper{
+  width:200px;
+  height:60px;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+.loading .circle{
+  width:20px;
+  height:20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: transparent;
+  left:15%;
+  transform-origin: 50%;
+  animation: circle .5s alternate infinite ease;
+}
+
+@keyframes circle{
+  0%{
+      top:60px;
+      height:5px;
+      border-radius: 50px 50px 25px 25px;
+      transform: scaleX(1.7);
+  }
+  40%{
+      height:20px;
+      border-radius: 50%;
+      transform: scaleX(1);
+  }
+  100%{
+      top:0%;
+  }
+}
+.loading .circle:nth-child(2){
+  left:45%;
+  animation-delay: .2s;
+}
+.loading .circle:nth-child(3){
+  left:auto;
+  right:15%;
+  animation-delay: .3s;
+}
+.loading .shadow{
+  width:20px;
+  height:4px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  top:82px;
+  transform-origin: 50%;
+  z-index: -1;
+  left:15%;
+  filter: blur(1px);
+  animation: shadow .5s alternate infinite ease;
+}
+
+@keyframes shadow{
+  0%{
+      transform: scaleX(1.5);
+  }
+  40%{
+      transform: scaleX(1);
+      opacity: .7;
+  }
+  100%{
+      transform: scaleX(.2);
+      opacity: .4;
+  }
+}
+.loading .shadow:nth-child(4){
+  left: 45%;
+  animation-delay: .2s
+}
+.loading .shadow:nth-child(5){
+  left:auto;
+  right:15%;
+  animation-delay: .3s;
+}
+.loading .wrapper p{
+  position: relative;
+  top: 100px;
+  font-family: "Lato";
+  font-size: 16px;
+  letter-spacing: 3.2px;
+  text-align: center;
+  color: #36B390;
+}
+/****LOADING***/
+
+
+//********AUTOCOMPLETE**********////
+.input-circularity-autocomplete{
+  position: absolute;
+  top: 40px;
+  z-index: 9;
+  background: #fff;
+  border: solid 1px;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.input-circularity-autocomplete ul {
+  list-style-type: none;
+  padding-bottom: 0;
+  padding-left: 0;
+  margin: auto;
+}
+
+.input-circularity-autocomplete ul li{
+  height: 40px;
+  vertical-align: bottom;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+
+  
+}
+
+.input-circularity-autocomplete ul li:hover{
+  background-color: #ccc;
+}

@@ -1,0 +1,14 @@
+<label
+  [for]="field.id"
+>
+  {{ field.name }}
+<span class="text-danger" *ngIf="field.required">*</span>:
+</label>
+<div class="input-group mb-1">
+  <select [id]="field.id" class="form-control input-circularity" [formControl]="control" [required]="field.required == true">
+    <option [value]="option.value" [selected]="option.selected" [disabled]="option.disabled" *ngFor="let option of field.options">
+      {{ option.name }} <span *ngIf="option?.count">({{option?.count}})</span>
+    </option>
+  </select>
+</div>
+  

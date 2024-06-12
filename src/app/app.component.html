@@ -1,0 +1,8 @@
+<!-- HEADER -->
+<app-header *ngIf="router.url !== '/login'" ></app-header>
+
+<!-- SIDEBAR -->
+<app-sidebar *ngIf="router.url !== '/login'" ></app-sidebar>
+
+<!-- CONTAINER -->
+<app-content></app-content>

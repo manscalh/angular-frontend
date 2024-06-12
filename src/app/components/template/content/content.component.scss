@@ -1,0 +1,26 @@
+.content{    
+    margin:0;
+    padding:0;
+}
+
+.area-content{
+    padding: 115px 20px;
+}
+
+@media (max-width: 991.98px) { 
+    .area-content{
+        padding: 110px 10px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .area-content{
+        padding: 110px 10px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .area-content{
+        padding: 110px 15px;
+    }
+}

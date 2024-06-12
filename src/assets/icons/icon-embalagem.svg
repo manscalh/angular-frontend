@@ -1,0 +1,8 @@
+<svg id="icon_embalagem" data-name="icon embalagem" xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
+  <g id="Icon">
+    <path id="Icon.BG" d="M14.5,0A14.5,14.5,0,1,1,0,14.5,14.5,14.5,0,0,1,14.5,0Z" fill="#4e8eb5"/>
+  </g>
+  <g id="BOXES" transform="translate(7.594 7.594)">
+    <path id="Caminho_2548" data-name="Caminho 2548" d="M31.063,20.719c0-.006,0-.012,0-.018a.265.265,0,0,0-.009-.046l-.005-.016a.259.259,0,0,0-.028-.056h0L28.8,17.362a.258.258,0,0,0-.213-.112H19.727a.258.258,0,0,0-.213.112L17.3,20.582h0a.259.259,0,0,0-.028.056l-.005.016a.264.264,0,0,0-.009.046c0,.006,0,.012,0,.018s0,.006,0,.009V30.8a.258.258,0,0,0,.258.259H30.806a.258.258,0,0,0,.259-.259V20.729S31.064,20.722,31.063,20.719Zm-.749-.25h-5.9v-2.7h4.037Zm-10.451-2.7H23.9v2.7H18ZM30.547,30.545H17.77V20.987H30.547Z" transform="translate(-17.253 -17.25)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>

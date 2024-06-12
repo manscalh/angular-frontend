@@ -1,0 +1,10 @@
+<svg id="icon_conometro" data-name="icon conometro" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <circle id="Elipse_89" data-name="Elipse 89" cx="15" cy="15" r="15" fill="#ef978e"/>
+  <g id="baseline-autorenew-24px" transform="translate(2.013 2.013)">
+    <path id="Caminho_165" data-name="Caminho 165" d="M0,0H25.974V25.974H0Z" fill="none"/>
+  </g>
+  <g id="baseline-access_alarm-24px" transform="translate(5.736 6.18)">
+    <path id="Caminho_1006" data-name="Caminho 1006" d="M0,0H18.529V18.529H0Z" fill="none"/>
+    <path id="Caminho_1007" data-name="Caminho 1007" d="M17.441,4.84,13.889,1.86l-1,1.181,3.551,2.98Zm-10.9-1.8L5.551,1.86,2,4.832,3,6.014ZM10.106,6.6H8.948v4.632l3.667,2.2.579-.95-3.088-1.83ZM9.72,3.512a6.948,6.948,0,1,0,6.948,6.948A6.949,6.949,0,0,0,9.72,3.512Zm0,12.352a5.4,5.4,0,1,1,5.4-5.4A5.4,5.4,0,0,1,9.72,15.865Z" transform="translate(-0.456 -0.424)" fill="#fff"/>
+  </g>
+</svg>

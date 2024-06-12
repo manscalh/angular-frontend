@@ -1,0 +1,24 @@
+<div class="sidebar d-flex" [ngClass]="{'sidebar-active': openedSidebar}">
+    <ul class="navbar-nav d-flex flex-column ">
+        <li class="nav-item w-100 " *ngFor="let row of getMenus; let i = index" [ngClass]="row.classActive" >
+            <div class="nav-link pl-4 d-flex" *ngIf="row.isClick" routerLink={{row.url}} (click)="clickMenu()">
+                <img src="./assets/icons/{{row.image}}" alt="" >
+                <span>{{row.name}}</span>
+            </div>
+
+            <div class="nav-link pl-4 d-flex" *ngIf="!row.isClick">
+                <img src="./assets/icons/{{row.image}}" alt="" >
+                <span>{{row.name}}</span>
+            </div>
+            
+            <ol class="nav-item w-100 " *ngFor="let sub of row.subitens; let j = index" [ngClass]="sub.classActive" >
+                <div class="nav-link-sub d-flex" routerLink="{{sub.url}}" (click)="clickMenu()">
+                    <span>{{sub.name}}</span>
+                </div>
+            </ol>
+        </li>
+    </ul>
+</div>
+
+<!-- OVERLAY TRUE -->
+<div class="overlay" *ngIf="openedSidebar" (click)="showSideBar()"></div>

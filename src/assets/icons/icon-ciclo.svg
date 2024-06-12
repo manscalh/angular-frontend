@@ -1,0 +1,7 @@
+<svg id="Icon_ciclos" data-name="Icon ciclos" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <path id="Icon.BG" d="M15,0A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z" fill="#3dcbd1"/>
+  <g id="baseline-autorenew-24px" transform="translate(4.516 4.516)">
+    <path id="Caminho_164" data-name="Caminho 164" d="M10.99,5.369V7.99l3.495-3.495L10.99,1V3.621A6.977,6.977,0,0,0,5.083,14.333l1.276-1.276a5.129,5.129,0,0,1-.612-2.446A5.246,5.246,0,0,1,10.99,5.369ZM16.9,6.889,15.62,8.164a5.234,5.234,0,0,1-4.631,7.689V13.232L7.495,16.727l3.495,3.495V17.6A6.977,6.977,0,0,0,16.9,6.889Z" transform="translate(-0.505 -0.126)" fill="#fff"/>
+    <path id="Caminho_165" data-name="Caminho 165" d="M0,0H20.969V20.969H0Z" fill="none"/>
+  </g>
+</svg>

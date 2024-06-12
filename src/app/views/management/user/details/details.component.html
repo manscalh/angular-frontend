@@ -1,0 +1,134 @@
+<div class="overlay d-flex flex-column align-items-center justify-content-center" *ngIf="isLoading">
+    <img src="./assets/icons/loading.svg" alt="loading" width="100px">
+    <span>Processando sua requisição...</span>
+</div>
+<section>
+    <div class="content-circularity-box">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="title">{{title}}</span>
+            </div>
+        </div>
+        <ng-container>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <form [formGroup]="formObject" (submit)="onSubmit">
+                        <div class="form-group mb-4 mt-5">
+                            <label>Nome
+                                <span class="text-danger">*</span>
+                            </label>
+                            
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="name">
+                            </div>
+                            <div *ngIf="submitted && formControl.name.errors" class="text-danger">
+                                <div *ngIf="formControl.name.errors.required">Nome é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>E-mail
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="email" 
+                                    formControlName="email">
+                            </div>
+                            <div *ngIf="submitted && formControl.email.errors" class="text-danger">
+                                <div *ngIf="formControl.email.errors.required">E-mail é obrigatório</div>
+                                <div *ngIf="formControl.email.errors.pattern">Informe um E-mail válido</div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-group mb-4">
+                            <label>User</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="user">
+                            </div>
+                            <div *ngIf="submitted && formControl.email.errors" class="text-danger">
+                                <div *ngIf="formControl.email.errors.required">User é obrigatório</div>
+                            </div>
+                        </div> -->
+
+                        <div class="form-group mb-4" *ngIf="isNew == false">
+                            <app-select-field [control]="formObject.controls['changePassword']" [field]="formFields[2]">
+                            </app-select-field>
+                        </div>
+
+                        <div class="form-group mb-4" *ngIf="formObject.value['changePassword'] == 1 || isNew == true">
+                            <label>Senha
+                                <span class="text-danger">*</span>
+                            </label>
+                            <small style="font-style: italic; color: blue;"> padrão: {{passDefault}}</small>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="password"
+                                    formControlName="password">
+                            </div>
+                            <div *ngIf="submitted && formControl.password.errors" class="text-danger">
+                                <div *ngIf="formControl.password.errors.required">Senha é obrigatório</div>
+                                <div *ngIf="formControl.password.errors.minlength">Senha incorreta, informe no mínimo 6 caracteres.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4" *ngIf="user.groupAccess == 'Administrador'">
+                            <app-select-field [control]="formObject.controls['profileId']" [field]="formFields[0]">
+                            </app-select-field>
+                            <div *ngIf="submitted && formControl.profileId.errors" class="text-danger">
+                                <div *ngIf="formControl.profileId.errors.required">Grupo de Acesso é obrigatório</div>
+                                <div *ngIf="formObject.value['profileId'] == 0">Grupo de Acesso é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4 " *ngIf="user.groupAccess == 'Administrador'">
+                            <app-select-field [control]="formObject.controls['companyId']" [field]="formFields[1]">
+                            </app-select-field>
+                            <div *ngIf="submitted && formControl.companyId.errors" class="text-danger">
+                                <div *ngIf="formControl.companyId.errors.required">Empresa é obrigatório</div>
+                                <div *ngIf="formObject.value['companyId'] == 0">Empresa é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Forçar alterar senha no próximo login?</label>
+                            <div class="input-group-checkbox mb-1 ">
+                                <input class="form-control input-circularity-checkbox" type="checkbox" formControlName="resetPasswordNextLogin">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Ativo?</label>
+                            <div class="input-group-checkbox mb-1 ">
+                                <input class="form-control input-circularity-checkbox" type="checkbox" formControlName="status">
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn px-4 custom-bt button-circularity color-button-blue" type="button"
+                                    (click)="onSubmit()">Salvar</button>
+                                <button class="btn px-4 custom-bt button-circularity color-button-red" type="button"
+                                (click)="onCancel()">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </ng-container>
+        
+    </div>
+</section>
+
+<ng-template #template>
+    <div class="modal-body">
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+        <div style="text-align: center;">
+            <span>{{msg}}</span>
+        </div>
+        
+    </div>
+</ng-template>

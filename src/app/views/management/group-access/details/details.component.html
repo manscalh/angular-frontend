@@ -1,0 +1,116 @@
+<div class="overlay d-flex flex-column align-items-center justify-content-center" *ngIf="isLoading">
+    <img src="./assets/icons/loading.svg" alt="loading" width="100px">
+    <span>Processando sua requisição...</span>
+</div>
+<section>
+    <div class="content-circularity-box">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="title">{{title}}</span>
+            </div>
+        </div>
+        <ng-container>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <form [formGroup]="formObject" (submit)="onSubmit">
+                        <div class="form-group mb-4 mt-5">
+                            <label>Nome</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="name">
+                            </div>
+                            <div *ngIf="submitted && formControl.name.errors" class="text-danger">
+                                <div *ngIf="formControl.name.errors.required">Nome é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Ativo?</label>
+                            <div class="input-group-checkbox mb-1 ">
+                                <input class="form-control input-circularity-checkbox" type="checkbox" formControlName="active">
+                            </div>
+                            
+                        </div>
+
+                        <!-- <div class="form-group mb-4">
+                            <label>Ações Gerais Permitidas</label>
+                            <div class="col-md-12" style="padding-left: 0;padding-right: 0;">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <input type="checkbox" formControlName="allowAdd"> Criar Novo
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" formControlName="allowSave"> Salvar
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" formControlName="allowEdit"> Editar
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" formControlName="allowDelete"> Excluir
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" formControlName="allowView"> Visualizar
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> -->
+
+                        <div class="form-group mb-4">
+                            <label>Acessos</label>
+                            <div class="col-md-12" style="padding-left: 0;padding-right: 0;">
+                                <ul class="list-group">
+                                    <li class="list-group-item" *ngFor="let item of sourceMenu; let i = index">
+                                        <input type="checkbox" (change)="onCheckMenu(item.check, [i])" [checked]="item.check"> {{item['name']}}
+                                        
+                                        <ul class="list-group" style="margin-top: 5px;">
+                                            <li class="list-group-item" *ngFor="let itemj of item['subitens']; ; let j = index">
+                                                <input type="checkbox" (change)="onCheckMenu(itemj.check, [i, j])" [checked]="itemj.check" > {{itemj['name']}}
+
+                                                <ul class="list-group" style="margin-top: 5px;">
+                                                    <li class="list-group-item" *ngFor="let itemk of itemj['subitens']; ; let k = index">
+                                                        <input type="checkbox" (change)="onCheckMenu(itemk.check, [i, j, k])" [checked]="itemk.check" > {{itemk['name']}}
+                                                        
+                                                        <ul class="list-group" style="margin-top: 5px;">
+                                                            <li class="list-group-item" *ngFor="let iteml of itemk['subitens']; ; let l = index">
+                                                                <input type="checkbox" (change)="onCheckMenu(iteml.check, [i, j, k, l])" [checked]="iteml.check" > {{iteml['name']}}
+                        
+                                                            </li>             
+                                                        </ul>
+                                                    </li>             
+                                                </ul>
+                                            </li>             
+                                        </ul>
+                                    </li>             
+                                </ul>
+                            </div>
+                            
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn px-4 custom-bt button-circularity color-button-blue" type="button"
+                                    (click)="onSubmit()">Salvar</button>
+                                <button class="btn px-4 custom-bt button-circularity color-button-red" type="button"
+                                (click)="onCancel()">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </ng-container>
+        
+    </div>
+</section>
+
+<ng-template #template>
+    <div class="modal-body">
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+        <div style="text-align: center;">
+            <span>{{msg}}</span>
+        </div>
+        
+    </div>
+</ng-template>

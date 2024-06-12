@@ -1,0 +1,138 @@
+
+<section class="section-circularity">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <span class="title" *ngIf="!isLoading">Meu Processo Circular</span>
+            <ngx-skeleton-loader count="1" appearance="line" *ngIf="isLoading"></ngx-skeleton-loader>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="formObject" (submit)="handlerSearch()" >
+            <div class="filter" *ngIf="!isLoading">
+                <label class="title">Filtro</label>
+                <div class="input-group ">
+                    <input class="form-control input-circularity" type="text" placeholder="Pesquisar item" formControlName="searchValue">
+                </div>
+                <button class="btn px-4 custom-bt button-circularity color-button-blue" type="button" (click)="handlerSearch()">Pesquisar</button>
+                <button class="btn px-4 custom-bt button-circularity color-button-blue" type="button" (click)="handlerNew()">Novo</button>
+            </div>
+            <div class="skeleton" *ngIf="isLoading"><ngx-skeleton-loader count="1" appearance="line" [theme]="{height: '70px'}" ></ngx-skeleton-loader></div>
+            
+            </form>
+            
+        </div>
+        
+    </div>
+
+    <ng-container >
+        <div class="row content">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 space-chart">
+                <div class="table-box">
+                    <table class="table table-hover mb-4" *ngIf="!isLoadingSearch">
+                        <thead>
+                            <tr>
+                            <th scope="col">Registro</th>
+                            <th scope="col">Marca</th> 
+                            <th scope="col">SKU</th> 
+                            <th scope="col">Número de Série</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Peso (KG)</th>
+                            <th scope="col">Condição</th>
+                            <th scope="col">Data de Criação</th>
+                            <th class="text-right">Registros por páginas:
+                                <select (change)="handlePageSizeChange($event)">
+                                    <option *ngFor="let size of pageSizes" [ngValue]="size" [selected]="size == perPage">
+                                      {{ size }}
+                                    </option>
+                                </select>
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr *ngFor="let item of objList | paginate: {
+                            itemsPerPage: perPage,
+                            currentPage: currentPage,
+                            totalItems: total }" >
+                                <td scope="row">{{item['numberRecord']}}</td>
+                                <td>{{item['product']['brand']['description']}}</td>
+                                <td>{{item['product']['SKU']}}</td>
+                                <td>{{item['serial']}}</td>
+                                <td>
+                                    {{ item['circulatityStatus']['name'] }}
+                                </td>
+                                <td>{{item['product']['weightString']}}</td>
+                                <td>{{item['generalCondition']['name']}}</td>
+                                <td>{{item['createdAt']}}</td>
+                                <td>
+                                    <button class="btn px-4 custom-bt button-circularity color-button-red float-right" type="button"
+                                    (click)="confirmDelete(template,'delete', item)" *ngIf="auth.canDelete()">Excluir</button>
+
+                                    <button class="btn px-4 custom-bt button-circularity color-button-blue float-right" type="button"
+                                    (click)="handlerEdit(item['id'])" *ngIf="auth.canEdit()">Editar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table" *ngIf="isLoadingSearch">
+                        <thead>
+                            <tr>
+                            <th scope="col"><ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader></th>
+                            <th scope="col"><ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader></th>
+                            <th scope="col"><ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader></th>
+                            <th><ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader></th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr>
+                               <td colspan="4">
+                                <ngx-skeleton-loader count="5" appearance="line" [theme]="{height: '50px'}" ></ngx-skeleton-loader>
+                               </td> 
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row text-center" *ngIf="!isLoadingSearch">
+                        <div class="col-md-12 center mb-2">
+                            <pagination-controls (pageChange)="currentPage = $event"
+                            previousLabel="Anterior"
+                            nextLabel="Próxima"
+                            responsive="true"
+                            (pageChange)="handlePageChange($event)"
+                            ></pagination-controls>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </ng-container>
+
+    <!-- <div class="d-flex flex-column align-items-center justify-content-center" *ngIf="isLoading" style="height: 320px; color: #026197" >
+        <img src="./assets/icons/loading.svg" alt="loading" width="72px">
+        <span>Processando sua requisição...</span>
+    </div> -->
+
+</section>
+<ng-template #template>
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+            <h4 class="modal-title">Excluir</h4>
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        <p>{{msg}}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn px-4 custom-bt button-circularity color-button-blue" (click)="handlerDelete()" data-dismiss="modal">Confirmar</button>
+            <button type="button" class="btn px-4 custom-bt button-circularity color-button-red" (click)="modalRef?.hide()" data-dismiss="modal">Cancelar</button>
+        </div>
+    </div>
+</ng-template>

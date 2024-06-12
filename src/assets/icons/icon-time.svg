@@ -1,0 +1,12 @@
+<svg id="icon_time" data-name="icon time" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="Icon_ciclos" data-name="Icon ciclos">
+    <path id="Icon.BG" d="M15,0A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z" fill="#4e8eb5"/>
+    <g id="baseline-autorenew-24px" transform="translate(4.516 4.516)">
+      <path id="Caminho_165" data-name="Caminho 165" d="M0,0H20.969V20.969H0Z" fill="none"/>
+    </g>
+  </g>
+  <g id="baseline-history-24px_1_" data-name="baseline-history-24px (1)" transform="translate(3 3.627)">
+    <path id="Caminho_302" data-name="Caminho 302" d="M0,0H22.747V22.747H0Z" fill="none"/>
+    <path id="Caminho_303" data-name="Caminho 303" d="M12.373,3a8.531,8.531,0,0,0-8.53,8.53H1l3.687,3.687.066.133,3.829-3.82H5.739a6.666,6.666,0,1,1,1.952,4.682L6.345,17.558A8.528,8.528,0,1,0,12.373,3Zm-.948,4.739v4.739l4.056,2.407.682-1.147-3.317-1.971V7.739Z" transform="translate(-0.052 -0.157)" fill="#fff"/>
+  </g>
+</svg>

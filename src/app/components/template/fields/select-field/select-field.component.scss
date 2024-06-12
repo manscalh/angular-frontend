@@ -1,0 +1,17 @@
+// @import "src/sass/bootstrap/colors.scss";
+
+.float-container select {
+  appearance: none;
+}
+
+.form-control-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  pointer-events: none;
+}
+
+label {
+  pointer-events: none;
+}

@@ -1,0 +1,39 @@
+.lb-logo{
+    font-size: 32px;
+}
+
+.custom-bt{
+    background-color: #026197; 
+    color: white;
+}
+.section{
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.card-signup{
+    background-color: #C0EBFD;
+}
+
+.card-signup > div {
+    color: #026197;
+}
+
+.overlay{
+    position: fixed;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.overlay > span{
+    color: #FFFFFF;
+    font-size: 24px;
+    letter-spacing: 0.5;
+}

@@ -1,0 +1,39 @@
+<nav class="navbar shadow-sm bg-white navbar-header">
+<div class="container-fluid  d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+        <!-- <img class="mr-2  img-logo" src="./assets/img/logo_packfree@2x.png" alt="Logo"> -->
+        <span class="mr-2 title-system pointer" routerLink="/home">Circularidade HP</span>
+        <img class="img-sidebar" src="./assets/icons/list.svg" width="28" alt="Sidebar" (click)="openOrCloseSidebar()">        
+    </div>
+    <div class="d-flex align-items-center">
+        <!-- <img class="ico-notification" src="./assets/icons/notification.svg" alt="user" >     -->
+        <!-- <img class="ico-status-server" src="./assets/icons/status-server.svg" alt="user" > -->
+        <!-- <span class="mr-2 status-server">SERVER</span>    -->
+        <div class="position-relative"  (mouseenter)="onMouseEnter(1)" (mouseleave)="onMouseLeave()">
+            <span class="name-user">{{authservice.getUser.name}}</span>
+            <img class="ico-logout" src="./assets/icons/icon-exit.svg" alt="sair" (click)="logout()" >
+            <!-- <img class="img-user ml-2" src="./assets/icons/user.svg" alt="user" > -->
+            <!-- <div class="position-absolute dropdown-container r-12" *ngIf="selectedIndex === 1">
+                <ul class="pl-0" style="list-style-type: none;">
+                    <li class="p-3">
+                        <div class="d-flex  align-items-center">
+                            <img class="img-user-pointer mr-2" src="./assets/icons/icon-user.svg" alt="user">
+                            <span>Profile</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex  align-items-center">
+                            <img class="img-user-pointer mr-2" src="./assets/icons/icon-setting.svg" alt="user">
+                            <span>Settings</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex  align-items-center" (click)="logout()">
+                            <img class="img-user-pointer mr-2" src="./assets/icons/icon-logout.svg" alt="user">
+                            <span>Logout</span>
+                        </div>
+                    </li>
+                </ul>
+            </div> -->
+        </div>    
+    </div>
+</div>
+</nav>

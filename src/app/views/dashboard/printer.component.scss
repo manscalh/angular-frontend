@@ -1,0 +1,58 @@
+.content-annual{
+    background-color: #eaeaea;
+    padding: 20px 30px;
+    border-radius: 6px;
+}
+
+.content-annual > div > div > span{
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'HP Simplified';
+}
+
+.space-chart{
+    margin: 15px 0;
+}
+
+.img-arrow{
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.img-arrow-active{
+    cursor: pointer;
+}
+
+@media (max-width: 991.98px) { 
+    .content-annual{        
+        padding: 10px 20px;        
+    }
+
+    .content-annual > div > div > span{
+        font-size: 20px;
+    }
+
+    .space-chart{
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .content-annual{        
+        padding: 15px 15px;        
+    }
+
+    .content-annual > div > div > span{
+        font-size: 18px;
+    }
+
+    .space-chart{
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .content-annual{        
+        padding: 10px 15px;        
+    }
+}

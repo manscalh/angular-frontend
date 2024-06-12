@@ -1,0 +1,161 @@
+<div
+  class="overlay d-flex flex-column align-items-center justify-content-center"
+  *ngIf="isLoading"
+>
+  <img src="./assets/icons/loading.svg" alt="loading" width="100px" />
+  <span>Processando sua requisição...</span>
+</div>
+
+<div class="row section-circularity">
+  <div class="col-md-12">
+    <form [formGroup]="filtroForm"> 
+      <div class="filter">
+        
+        <label class="title">Package</label>
+        <div class="input-group">
+          <select
+            class="form-control input-circularity"
+            formControlName="package_name"
+          >
+            <option value="">Select package model</option>
+            <option *ngFor="let option of packageOptions" [value]="option">
+              {{ option }}
+            </option>
+          </select>
+        </div>
+
+        <label class="title">Start</label>
+        <div class="input-group">
+          <input
+            class="form-control input-circularity"
+            type="date"
+            placeholder="Search Start Date"
+            formControlName="start_date" 
+          />
+        </div>
+        <label class="title">End</label>
+        <div class="input-group">
+          <input
+            class="form-control input-circularity"
+            type="date"
+            placeholder="Search End Date"
+            formControlName="end_date" 
+          />
+        </div>
+        <button
+          class="btn px-4 custom-bt button-circularity color-button-blue"
+          type="button"
+          (click)="logData()"
+        >
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div
+  style="display: flex; width: 100%; justify-content: left; margin-top: 10px"
+>
+  <h2>GENERAL DATA</h2>
+</div>
+
+<section class="section-circularity">
+  <!-- <section *ngIf="!isVisibleCard"> -->
+  <!-- <div class="container-fluid"> -->
+  <div class="content-circularity-box">
+    <ng-container>
+      <div class="row mb-3">
+        <div class="col-md-3 pr-2 pl-2 pb-2">
+          <div class="shadow bg-white rounded">
+            <app-full-packaging></app-full-packaging>
+          </div>
+        </div>
+        <div class="col-md-3 pr-2 pl-2 pb-2">
+          <div class="shadow bg-white rounded">
+            <app-full-cycle></app-full-cycle>
+          </div>
+        </div>
+        <div class="col-md-3 pr-2 pl-2 pb-2">
+          <div class="shadow bg-white rounded">
+            <app-carbon-reduction></app-carbon-reduction>
+          </div>
+        </div>
+        <div class="col-md-3 pr-2 pl-2 pb-2">
+          <div class="shadow bg-white rounded">
+            <app-financial-economy></app-financial-economy>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6 pr-2 pl-2 pb-2">
+          <div class="shadow bg-white rounded">
+            <app-complete-cycles-per-item></app-complete-cycles-per-item>
+          </div>
+        </div>
+        <div class="col-md-3 pr-2 pl-2 pb-2">
+          <div class="shadow bg-white rounded">
+            <app-cycle-time></app-cycle-time>
+          </div>
+        </div>
+        <div class="col-md-3 pr-2 pl-2 pb-2">
+          <div class="shadow bg-white rounded">
+            <app-lifetime></app-lifetime>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6 pr-2 pl-2 pb-2">
+          <div class="shadow bg-white rounded">
+            <app-quantity-type-packaging></app-quantity-type-packaging>
+          </div>
+        </div>
+
+        <div class="col-md-6 pr-2 pl-2 pb-2">
+          <div class="shadow bg-white rounded">
+            <app-packaging-location></app-packaging-location>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-3 pr-2 pl-2 pb-2">
+              <div class="shadow bg-white rounded">
+                <app-lost-packaging></app-lost-packaging>
+              </div>
+            </div>
+
+            <div class="col-md-3 pr-2 pl-2 pb-2">
+              <div class="shadow bg-white rounded">
+                <app-recycled-packaging></app-recycled-packaging>
+              </div>
+            </div>
+
+            <div class="col-md-3 pr-2 pl-2 pb-2">
+              <div class="shadow bg-white rounded">
+                <app-maximum-cycle></app-maximum-cycle>
+              </div>
+            </div>
+
+            <div class="col-md-3 pr-2 pl-2 pb-2">
+              <div class="shadow bg-white rounded">
+                <app-value-of-all-packaging></app-value-of-all-packaging>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-12 pr-2 pl-2 pb-2">
+          <div class="shadow bg-white rounded">
+            <app-scan-history-table></app-scan-history-table>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <!-- </div> -->
+</section>

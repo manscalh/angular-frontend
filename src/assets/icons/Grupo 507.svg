@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="276" height="210" viewBox="0 0 276 210">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Subtração_6" data-name="Subtração 6" d="M2883,1917h-36c0-.1,0-.2,0-.3v-.2a92.231,92.231,0,0,1,7.583-36.783,93.968,93.968,0,0,1,8.9-16.052,95.7,95.7,0,0,1,11.784-13.986,97.649,97.649,0,0,1,136.472,0,95.64,95.64,0,0,1,11.783,13.986,93.844,93.844,0,0,1,8.9,16.052A92.229,92.229,0,0,1,3040,1916.5c0,.166,0,.335,0,.5h-39c0-.1,0-.2,0-.294a52.691,52.691,0,0,0-4.637-21.684,54.814,54.814,0,0,0-5.439-9.463,56.915,56.915,0,0,0-7.2-8.244,58.8,58.8,0,0,0-8.732-6.8,60.2,60.2,0,0,0-10.021-5.135,62.429,62.429,0,0,0-45.931,0,60.188,60.188,0,0,0-10.022,5.135,58.891,58.891,0,0,0-8.732,6.8,56.99,56.99,0,0,0-7.2,8.244,54.848,54.848,0,0,0-5.44,9.463,52.708,52.708,0,0,0-4.637,21.684v.119c0,.027,0,.054,0,.081v.007c0,.029,0,.058,0,.087Z" transform="translate(-1733 -1539)" fill="#4e8eb5"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_507" data-name="Grupo 507" transform="translate(-1074 -215)">
+    <g id="Grupo_505" data-name="Grupo 505" transform="translate(852)">
+      <g id="Grupo_501" data-name="Grupo 501">
+        <g id="Retângulo_1648" data-name="Retângulo 1648" transform="translate(222 215)" fill="#fff" stroke="#e7e7e7" stroke-width="1">
+          <rect width="276" height="210" rx="6" stroke="none"/>
+          <rect x="0.5" y="0.5" width="275" height="209" rx="5.5" fill="none"/>
+        </g>
+        <g id="High_level_overview_section" data-name="High level overview section" transform="translate(241 226)">
+          <g id="Total_Views" data-name="Total Views" transform="translate(0)">
+            <text id="Tempo_médio_de_ciclo" data-name="Tempo médio de ciclo" transform="translate(35.262 18.5)" fill="#ef978e" font-size="15" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">Tempo médio de ciclo</tspan></text>
+          </g>
+        </g>
+      </g>
+      <path id="Vector" d="M0,10.147H13.952M0,5.074H13.952M0,0H13.952" transform="translate(485.952 245.473) rotate(180)" fill="none" stroke="#3e4347" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.23"/>
+    </g>
+    <path id="Subtração_3" data-name="Subtração 3" d="M2883,1917h-36c0-.1,0-.2,0-.3v-.2a92.231,92.231,0,0,1,7.583-36.783,93.968,93.968,0,0,1,8.9-16.052,95.7,95.7,0,0,1,11.784-13.986,97.649,97.649,0,0,1,136.472,0,95.64,95.64,0,0,1,11.783,13.986,93.844,93.844,0,0,1,8.9,16.052A92.229,92.229,0,0,1,3040,1916.5c0,.166,0,.335,0,.5h-39c0-.1,0-.2,0-.294a52.691,52.691,0,0,0-4.637-21.684,54.814,54.814,0,0,0-5.439-9.463,56.915,56.915,0,0,0-7.2-8.244,58.8,58.8,0,0,0-8.732-6.8,60.2,60.2,0,0,0-10.021-5.135,62.429,62.429,0,0,0-45.931,0,60.188,60.188,0,0,0-10.022,5.135,58.891,58.891,0,0,0-8.732,6.8,56.99,56.99,0,0,0-7.2,8.244,54.848,54.848,0,0,0-5.44,9.463,52.708,52.708,0,0,0-4.637,21.684v.119c0,.027,0,.054,0,.081v.007c0,.029,0,.058,0,.087Z" transform="translate(-1733 -1539)" fill="#e7e7e7"/>
+    <line id="Linha_49" data-name="Linha 49" x2="17" y2="34" transform="translate(1168.5 292.5)" fill="none" stroke="#84d03f" stroke-width="1" stroke-dasharray="3"/>
+    <g id="Grupo_de_máscara_11" data-name="Grupo de máscara 11" clip-path="url(#clip-path)">
+      <path id="Caminho_4686" data-name="Caminho 4686" d="M-1695.793-1518.729l26.211,26.636-26.211,52.846-38.4-1.7v-44.487L-1705-1521.7Z" transform="translate(2847 1822)" fill="#ef978e"/>
+    </g>
+    <text id="_0" data-name="0" transform="translate(1129 393)" fill="#909096" font-size="15" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">0</tspan></text>
+    <text id="_100" data-name="100" transform="translate(1275 393)" fill="#909096" font-size="15" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">100</tspan></text>
+    <text id="_29" data-name="29" transform="translate(1166 374)" fill="#ef978e" font-size="15" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">29</tspan></text>
+    <text id="_33" data-name="33" transform="translate(1229 374)" fill="#84d03f" font-size="15" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">33</tspan></text>
+    <text id="AVG_DIAS_" data-name="AVG (DIAS)" transform="translate(1155 390)" fill="#ef978e" font-size="8" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">AVG (DIAS)</tspan></text>
+    <text id="TARGET_AVG_" data-name="TARGET (AVG)" transform="translate(1211 390)" fill="#84d03f" font-size="8" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">TARGET (AVG)</tspan></text>
+    <g id="icon_conometro" data-name="icon conometro" transform="translate(1090 224.499)">
+      <circle id="Elipse_89" data-name="Elipse 89" cx="15" cy="15" r="15" fill="#ef978e"/>
+      <g id="baseline-autorenew-24px" transform="translate(2.013 2.013)">
+        <path id="Caminho_165" data-name="Caminho 165" d="M0,0H25.974V25.974H0Z" fill="none"/>
+      </g>
+      <g id="baseline-access_alarm-24px" transform="translate(5.736 6.18)">
+        <path id="Caminho_1006" data-name="Caminho 1006" d="M0,0H18.529V18.529H0Z" fill="none"/>
+        <path id="Caminho_1007" data-name="Caminho 1007" d="M17.441,4.84,13.889,1.86l-1,1.181,3.551,2.98Zm-10.9-1.8L5.551,1.86,2,4.832,3,6.014ZM10.106,6.6H8.948v4.632l3.667,2.2.579-.95-3.088-1.83ZM9.72,3.512a6.948,6.948,0,1,0,6.948,6.948A6.949,6.949,0,0,0,9.72,3.512Zm0,12.352a5.4,5.4,0,1,1,5.4-5.4A5.4,5.4,0,0,1,9.72,15.865Z" transform="translate(-0.456 -0.424)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

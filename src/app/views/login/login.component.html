@@ -1,0 +1,85 @@
+<!-- OVERLAY TRUE -->
+<!-- <div class="overlay d-flex flex-column align-items-center justify-content-center" *ngIf="isLoading">
+    <img src="./assets/icons/loading.svg" alt="loading" width="100px">
+    <span>Processando, aguarde...</span>
+</div> -->
+
+<loading [message]="'Carregando'" *ngIf="isLoading"></loading>
+
+<section class="section">
+    <div class="bg-light min-vh-100 d-flex flex-row align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="card-group d-block d-md-flex row">
+                        <div class="card col-md-12 p-4 mb-0">
+                            <div class="card-body">
+                                <div class="d-flex flex-row align-items-center mb-3">
+                                    <!-- <span class="lb-logo">Circularidade HP</span> -->
+                                    <h2>Circularidade HP</h2>
+                                </div>
+                                <!-- <p class="text-medium-emphasis">Sign In to your account</p> -->
+                                <form [formGroup]="formUser">
+                                    <div class="form-group mb-4 mt-5">
+                                        <div class="input-group mb-1">
+                                            <input class="form-control input-circularity" type="text" placeholder="E-mail"
+                                                [ngClass]="{ 'is-invalid': submitted && fUser.username.errors }"
+                                                formControlName="username">
+                                        </div>
+                                        <div *ngIf="submitted && fUser.username.errors" class="text-danger">
+                                            <div *ngIf="fUser.username.errors.required">E-mail é obrigatório</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div class="input-group ">
+                                            <input class="form-control input-circularity" type="password" placeholder="Senha"
+                                                [ngClass]="{ 'is-invalid': submitted && fUser.password.errors }"
+                                                formControlName="password"  (keyup.enter)="onEnterKeyPress($event)">
+                                        </div>
+                                        <div *ngIf="submitted && fUser.password.errors" class="text-danger">
+                                            <div *ngIf="fUser.password.errors.required">Senha é obrigatória</div>
+                                            <div *ngIf="fUser.password.errors.minlength">Senha incorreta, informe no mínimo 6 caracteres.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button class="btn px-4 custom-bt button-circularity color-button" type="button"
+                                                (click)="onSubmit()">Entrar</button>
+                                        </div>
+                                        <!-- <div class="col-6 text-end">
+                                            <button class="btn btn-link px-0" type="button"
+                                                style=" color: #026197;" (click)="openModal(template, 'forgotpassword')">Forgot password?</button>
+                                        </div> -->
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <div class="card-signup card col-md-5 text-white py-5">
+                            <div class="card-body text-center">
+                                <div>
+                                    <h2>Sign up</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua.</p>
+                                    <button class="btn  mt-3 custom-bt" type="button" (click)="openModal(template, 'newregister')">Register
+                                        Now!</button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng-template #template>
+    <div class="modal-body">
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+        <div style="text-align: center;">
+            <span>{{msg}}</span>
+        </div>
+    </div>
+</ng-template>

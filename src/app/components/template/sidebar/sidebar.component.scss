@@ -1,0 +1,87 @@
+.sidebar{
+  margin-top: 85px;
+  width: 250px;
+  height: 100vh;
+  background-color: #FFF;
+  position: fixed;
+  z-index:100;
+  transition: 0.4s;
+  margin-left: -300px;
+}
+  
+.sidebar-active{
+  margin-left: 0px;
+}
+  
+.overlay{
+  margin-top: 48px;
+  position: fixed;
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100vh; /* Full height (cover the whole page) */
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; 
+}
+
+.navbar-nav {
+  margin-top: 20px;
+}
+
+.nav-link{
+  //  margin-top: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 250px;
+  cursor: pointer;
+  color: #4E8EB5;
+  font-weight: 900;
+}
+
+.nav-link-sub{
+  //  margin-top: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 200px;
+  cursor: pointer;
+  margin-left: 11px;
+}
+
+  // .nav-link:active,
+  // .nav-link:focus,
+  // .nav-link:hover{
+  //   background-color: #026197;
+  //   color: #FFFFFF;
+  // }
+  
+.no-active  {   
+  color: #026197;
+}
+
+.active  {   
+  background-color: #edf3f7 !important; 
+  color: #909096;
+  // font-size: 18px !important;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-left: -1px;
+}
+
+.nav-link > span{
+  font-size: 14px;
+}
+
+.nav-link > img{
+  width: 27px;
+  height: 18px;
+  padding-right: 8px;
+}
+
+  
+
+.nav-item.active .nav-link span{
+  font-family: 'Poppins-Bold';
+}
+
+.nav-item.active .nav-link-sub span{
+  font-family: 'Poppins-Bold';
+}

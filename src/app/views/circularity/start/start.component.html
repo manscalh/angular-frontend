@@ -1,0 +1,188 @@
+<div class="overlay d-flex flex-column align-items-center justify-content-center" *ngIf="isLoading">
+    <img src="./assets/icons/loading.svg" alt="loading" width="100px">
+    <span>Processando sua requisição...</span>
+</div>
+<section>
+    <div class="content-circularity-box">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="title">{{title}}</span>
+            </div>
+        </div>
+        <ng-container>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <form [formGroup]="formObject" (submit)="onSubmit">
+                        <div class="form-group mb-4 mt-5">
+                            <label>SKU
+                                <span class="text-danger">*</span>
+                            </label>                            
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text" formControlName="SKU" (keyup)="onKeypressEvent($event)"
+                                (blur)="onBlurAutoComplete()">
+                                <div class="input-circularity-autocomplete" *ngIf="isSearchAutcomplete">
+                                    <ul>
+                                        <li *ngFor="let item of listSKU; index as i" (click)="onSelectedSKU(item)" tabindex={{i}}>
+                                            {{item['description']}} - <div innerHTML="&nbsp;{{item['SKU']}}"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div *ngIf="submitted && formControl.productId.errors" class="text-danger">
+                                <div *ngIf="formControl.productId.errors.required">SKU é obrigatório</div>
+                                <div *ngIf="formObject.value['productId'] == 0">SKU é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Número de Serie
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="serial">
+                            </div>
+                            <div *ngIf="submitted && formControl.serial.errors" class="text-danger">
+                                <div *ngIf="formControl.serial.errors.required">Serial é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Marca</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text" formControlName="brandId" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <app-select-field [control]="formObject.controls['generalConditionId']" [field]="formFields[0] ">
+                            </app-select-field>
+                            <div *ngIf="submitted && formControl.generalConditionId.errors" class="text-danger">
+                                <div *ngIf="formControl.generalConditionId.errors.required">Condição Geral é obrigatório</div>
+                                <div *ngIf="formObject.value['generalConditionId'] == 0">Condição Geral é obrigatório</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-4">
+                            <label>Peso do Produto (Kg)</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text" formControlName="weightProduct" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Contagem Total de Paginas Impressas
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="totalCountPrintPages">
+                            </div>
+                            <div *ngIf="submitted && formControl.totalCountPrintPages.errors" class="text-danger">
+                                <div *ngIf="formControl.totalCountPrintPages.errors.required">Contagem Total de Paginas Impressas é obrigatório</div>
+                                <div *ngIf="formObject.value['totalCountPrintPages'] == 0">Contagem Total de Paginas Impressas é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Nivel Atual do Suprimento
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="currentSupplylevel">
+                            </div>
+                            <div *ngIf="submitted && formControl.currentSupplylevel.errors" class="text-danger">
+                                <div *ngIf="formControl.currentSupplylevel.errors.required">Nivel Atual do Suprimento é obrigatório</div>
+                                <div *ngIf="formObject.value['currentSupplylevel'] == 0">Nivel Atual do Suprimento é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Nivel Atual do Tambor de Imagem
+                                <span class="text-success">(opcional)</span>
+                            </label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="currentInkLevel">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Nivel Atual do kit de Manutenção da Impressora
+                                <span class="text-success">(opcional)</span>
+                            </label>                            
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="currentMaintenanceKitLevel">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>A limpeza da impressora foi feita?
+                            </label>                            
+                            <div class="input-group mb-1">
+                                <input class="" type="radio" formControlName="printerCleaning" value="1"> Sim &nbsp;&nbsp;
+                                <input class="" type="radio" formControlName="printerCleaning" value="0"> Não
+                            </div>
+                            <div *ngIf="submitted && formControl.printerCleaning.errors" class="text-danger">
+                                <div *ngIf="formControl.printerCleaning.errors.required">É obrigatório marcar uma opção.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Houve peças que foram substituídas ou reparadas?
+                            </label>                            
+                            <div class="input-group mb-1">
+                                <input class="" type="radio" formControlName="replacementRepair" value="1"> Sim &nbsp;&nbsp;
+                                <input class="" type="radio" formControlName="replacementRepair" value="0"> Não
+                            </div>
+                            <div *ngIf="submitted && formControl.replacementRepair.errors" class="text-danger">
+                                <div *ngIf="formControl.replacementRepair.errors.required">É obrigatório marcar uma opção.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4" *ngIf="formObject.value['replacementRepair'] == 1">
+                            <label>Comente o que achar relevante  da troca da peça
+                            </label>                            
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="commentReplacementRepair">
+                            </div>
+                            <div *ngIf="submitted && formObject.value['replacementRepair'] == 1 && formObject.value['commentReplacementRepair'] == ''" class="text-danger">
+                                <div>É obrigatório comentar sobre a troca de peças.</div>
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn px-4 custom-bt button-circularity color-button-red" type="button"
+                                (click)="onCancel()">Cancelar</button>
+                                <button class="btn px-4 custom-bt button-circularity color-button-warning" type="button"
+                                    (click)="onSubmit()">Salvar</button>
+                                
+                                <button class="btn px-4 custom-bt button-circularity color-button-blue" type="button"
+                                    (click)="onNextStep()">Avançar</button>
+                                
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </ng-container>
+        
+    </div>
+</section>
+
+<ng-template #template>
+    <div class="modal-body">
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+        <div style="text-align: center;">
+            <span>{{msg}}</span>
+        </div>
+        
+    </div>
+</ng-template>

@@ -1,0 +1,274 @@
+<div class="overlay d-flex flex-column align-items-center justify-content-center" *ngIf="isLoading">
+    <img src="./assets/icons/loading.svg" alt="loading" width="100px">
+    <span>Processando sua requisição...</span>
+  </div>
+  <section>
+    <div class="content-circularity-box">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="title">{{title}}</span>
+            </div>
+        </div>
+        <ng-container>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <form [formGroup]="formObject" (submit)="onSubmit">
+                        <div class="form-group mb-4 mt-5">
+                            <label>Menu</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="description">
+                            </div>
+                            <div *ngIf="submitted && formControl.description.errors" class="text-danger">
+                                <div *ngIf="formControl.description.errors.required">Menu é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>URL</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="url">
+                            </div>
+                            <div *ngIf="submitted && formControl.url.errors" class="text-danger">
+                                <div *ngIf="formControl.url.errors.required">URL é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-group mb-4">
+                            <label>Image</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="image">
+                            </div>
+                        </div> -->
+                        <div class="form-group mb-4 ">
+                            <app-select-field [control]="formObject.controls['image']" [field]="formFields[1]">
+                            </app-select-field>
+                        </div>
+
+                        <!-- <div class="form-group mb-4">
+                            <label>Image Ativa</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="image_active">
+                            </div>
+                        </div> -->
+
+                        <div class="form-group mb-4">
+                            <label>Ativo?</label>
+                            <div class="input-group-checkbox mb-1 ">
+                                <input class="form-control input-circularity-checkbox" type="checkbox" formControlName="active">
+                            </div>
+                            
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Exibir no Menu Lateral?</label>
+                            <div class="input-group-checkbox mb-1 ">
+                                <input class="form-control input-circularity-checkbox" type="checkbox" formControlName="showSideBar">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Exibir na Home?</label>
+                            <div class="input-group-checkbox mb-1 ">
+                                <input class="form-control input-circularity-checkbox" type="checkbox" formControlName="showHome">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Permitir clique?</label>
+                            <div class="input-group-checkbox mb-1 ">
+                                <input class="form-control input-circularity-checkbox" type="checkbox" formControlName="isClick">
+                            </div>                          
+                        </div>
+   
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn px-4 custom-bt button-circularity color-button-blue" type="button"
+                                    (click)="onSubmit()">Salvar</button>
+                                <button class="btn px-4 custom-bt button-circularity color-button-red" type="button"
+                                (click)="onCancel()">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </ng-container>
+        
+    </div>
+  </section>
+  <br>
+  <section class="section-circularity" *ngIf="objId != 0 && objId != undefined">
+    <div class="content-circularity-box">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="title">Itens do Menu</span> 
+                <button class="btn px-4 custom-bt button-circularity color-button-blue" type="button" style="float: right; margin-right: 0;" (click)="handlerNew()">Novo</button>
+            </div>
+            
+        </div>
+        
+        <ng-container >
+            <div class="row content">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 space-chart">
+                    <div class="table-box">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">descrição</th>
+                                <th scope="col">url</th>
+                                <th scope="col">icone</th>
+                                <!-- <th scope="col">image_active</th> -->
+                                <th scope="col">criado</th>
+                                <th scope="col">status</th>
+                                <th></th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr *ngFor="let item of objList" >
+                                    <td scope="row">{{item['id']}}</td>
+                                    <td>{{item['description']}}</td>
+                                    <td>{{item['url']}}</td>
+                                    <td>{{item['image']}}</td>
+                                    <!-- <td>{{item['image_active']}}</td> -->
+                                    <td>{{item['createdAt']}}</td>
+                                    <td>
+                                        <span [class]="item['active'] ? 'text-success' : 'text-danger'">
+                                          {{ item['active'] ? 'Ativo' : 'Inativo' }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="btn px-4 custom-bt button-circularity color-button-red float-right" type="button"
+                                        (click)="confirmDelete(template,'delete', item)">Excluir</button>
+    
+                                        <!-- <button class="btn px-4 custom-bt button-circularity color-button-blue float-right" type="button"
+                                        (click)="handlerEdit(templateEdit,'edit', item)">Editar</button> -->
+                                        <button class="btn px-4 custom-bt button-circularity color-button-blue float-right" type="button"
+                                        (click)="handlerEdit(item['id'])">Editar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </ng-container>
+    </div>
+    
+
+</section>
+  
+<ng-template #template>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Deletar Item</h4>
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        <p>{{msg}}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn px-4 custom-bt button-circularity color-button-blue" (click)="handlerDelete()" data-dismiss="modal">Confirmar</button>
+            <button type="button" class="btn px-4 custom-bt button-circularity color-button-red" (click)="modalRef?.hide()" data-dismiss="modal">Cancelar</button>
+        </div>
+    </div>
+</ng-template>
+
+<!-- <ng-template #templateEdit>
+    
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Editar Item</h4>
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <form [formGroup]="formObjectItem" (submit)="onSubmit">
+                        <div class="form-group mb-4">
+                            <label>Menu</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="description">
+                            </div>
+                            <div *ngIf="submitted && formControl.description.errors" class="text-danger">
+                                <div *ngIf="formControl.description.errors.required">Menu é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>URL</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="url">
+                            </div>
+                            <div *ngIf="submitted && formControl.url.errors" class="text-danger">
+                                <div *ngIf="formControl.url.errors.required">URL é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Image</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="image">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Image Ativa</label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="image_active">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Ativo?</label>
+                            <div class="input-group-checkbox mb-1 ">
+                                <input class="form-control input-circularity-checkbox" type="checkbox" formControlName="active">
+                            </div>
+                            
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Exibir no Menu Lateral?</label>
+                            <div class="input-group-checkbox mb-1 ">
+                                <input class="form-control input-circularity-checkbox" type="checkbox" formControlName="showSideBar">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Exibir na Home?</label>
+                            <div class="input-group-checkbox mb-1 ">
+                                <input class="form-control input-circularity-checkbox" type="checkbox" formControlName="showHome">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Permitir clique?</label>
+                            <div class="input-group-checkbox mb-1 ">
+                                <input class="form-control input-circularity-checkbox" type="checkbox" formControlName="isClick">
+                            </div>                          
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn px-4 custom-bt button-circularity color-button-blue" (click)="handlerDelete()" data-dismiss="modal">Salvar</button>
+            <button type="button" class="btn px-4 custom-bt button-circularity color-button-red" (click)="modalRef?.hide()" data-dismiss="modal">Cancelar</button>
+        </div>
+    </div>
+    
+</ng-template> -->

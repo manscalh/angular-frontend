@@ -1,0 +1,11 @@
+<svg id="Filtro_modelos" data-name="Filtro modelos" xmlns="http://www.w3.org/2000/svg" width="163" height="24" viewBox="0 0 163 24">
+  <g id="Retângulo_1647" data-name="Retângulo 1647" fill="#fff" stroke="#e7e7e7" stroke-width="1">
+    <rect width="163" height="23" rx="6" stroke="none"/>
+    <rect x="0.5" y="0.5" width="162" height="22" rx="5.5" fill="none"/>
+  </g>
+  <g id="icon-filter" transform="translate(139)">
+    <path id="Caminho_1411" data-name="Caminho 1411" d="M7.41,8.59,12,13.17l4.59-4.58L18,10l-6,6L6,10Z" fill="#3e4347"/>
+    <path id="Caminho_1412" data-name="Caminho 1412" d="M0,0H24V24H0Z" fill="none"/>
+  </g>
+  <text id="Todos_os_Modelos" data-name="Todos os Modelos" transform="translate(9 15)" fill="#909096" font-size="11" font-family="Poppins-Regular, Poppins"><tspan x="0" y="0">Todos os Modelos</tspan></text>
+</svg>
