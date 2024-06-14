@@ -18,6 +18,8 @@ import { NewCompanyComponent } from './views/management/company/details/details.
 import { NewProductComponent } from './views/management/product/details/details.component';
 import { CircularityComponent } from './views/circularity/circularity.component';
 import { StartCircularityComponent } from './views/circularity/start/start.component';
+import { CustomerpnComponent } from './views/management/customerpn/customerpn.component';
+import { NewCustomerPNComponent } from './views/management/customerpn/details/details.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,26 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "management/customerpn",
+    component: CustomerpnComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "management/customerpn/details",
+    component: NewCustomerPNComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "management/customerpn/create",
+    component: NewCustomerPNComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "management/customerpn/edit/:id",
+    component: NewCustomerPNComponent,
     canActivate: [AuthGuard],
   },
   {

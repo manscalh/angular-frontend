@@ -83,7 +83,7 @@ export class MenuService{
         );
     }
 
-    public getAll(page: number = 1, perPage: number = 5): Observable<any> {
+    public getAll(page: number = 1, perPage: number = 5): Observable<any> {   
   
         return this.httpClient
           .get<any>(this.URL_API+"?page="+page+"&perPage="+perPage, { headers: this.getHeader })

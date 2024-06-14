@@ -1,0 +1,7 @@
+<svg id="menu_item" data-name="menu item" xmlns="http://www.w3.org/2000/svg" width="148" height="20" viewBox="0 0 148 20">
+  <text id="Cloud_Storage" data-name="Cloud Storage" transform="translate(35 2)" fill="#4e8eb5" font-size="12" font-family="Poppins-SemiBold, Poppins" font-weight="600"><tspan x="0" y="13">Cadastrar</tspan></text>
+  <g id="baseline-add_circle_outline-24px">
+    <path id="Caminho_918" data-name="Caminho 918" d="M0,0H20V20H0Z" fill="none"/>
+    <path id="Caminho_919" data-name="Caminho 919" d="M10.8,6H9.2V9.2H6v1.6H9.2V14h1.6V10.8H14V9.2H10.8ZM10,2a8,8,0,1,0,8,8A8,8,0,0,0,10,2Zm0,14.4A6.4,6.4,0,1,1,16.4,10,6.409,6.409,0,0,1,10,16.4Z" fill="#ef978e"/>
+  </g>
+</svg>

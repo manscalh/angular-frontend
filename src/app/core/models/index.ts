@@ -13,3 +13,4 @@ export * from 'src/app/core/models/report.model';
 export * from 'src/app/core/models/reportAll.model';
 export * from 'src/app/core/models/product.model';
 export * from 'src/app/core/models/brand.model';
+export * from 'src/app/core/models/customerpn.model';

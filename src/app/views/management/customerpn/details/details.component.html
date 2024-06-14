@@ -1,0 +1,72 @@
+<div class="overlay d-flex flex-column align-items-center justify-content-center" *ngIf="isLoading">
+    <img src="./assets/icons/loading.svg" alt="loading" width="100px">
+    <span>Processando sua requisição...</span>
+</div>
+<section>
+    <div class="content-circularity-box">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="title">{{title}}</span>
+            </div>
+        </div>
+        <ng-container>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <form [formGroup]="formObject" (submit)="onSubmit">
+                        <div class="form-group mb-4 mt-5">
+                            <label>Customer
+                                <span class="text-danger">*</span>
+                            </label>
+                            
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text"
+                                    formControlName="customer">
+                            </div>
+                            <div *ngIf="submitted && formControl.customer.errors" class="text-danger">
+                                <div *ngIf="formControl.customer.errors.required">Nome é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Partnumber
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group mb-1">
+                                <input class="form-control input-circularity" type="text" 
+                                    formControlName="partnumber">
+                            </div>
+                            <div *ngIf="submitted && formControl.partnumber.errors" class="text-danger">
+                                <div *ngIf="formControl.partnumber.errors.required">Partnumber é obrigatório</div>
+                            </div>
+                        </div>
+
+                      
+                       
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn px-4 custom-bt button-circularity color-button-blue" type="button"
+                                    (click)="onSubmit()">Salvar</button>
+                                <button class="btn px-4 custom-bt button-circularity color-button-red" type="button"
+                                (click)="onCancel()">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </ng-container>
+        
+    </div>
+</section>
+
+<ng-template #template>
+    <div class="modal-body">
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+        <div style="text-align: center;">
+            <span>{{msg}}</span>
+        </div>
+        
+    </div>
+</ng-template>

@@ -61,6 +61,8 @@ import { SkeletonFormComponent } from './components/skeleton/skeleton-form/skele
 import { LoadingComponent } from './components/template/loading/loading.component';
 import { CircularityComponent } from './views/circularity/circularity.component';
 import { StartCircularityComponent } from './views/circularity/start/start.component';
+import { CustomerpnComponent } from './views/management/customerpn/customerpn.component';
+import { NewCustomerPNComponent } from './views/management/customerpn/details/details.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +109,9 @@ import { StartCircularityComponent } from './views/circularity/start/start.compo
     SkeletonFormComponent,
     LoadingComponent,
     CircularityComponent,
-    StartCircularityComponent
+    StartCircularityComponent,
+    CustomerpnComponent,
+    NewCustomerPNComponent
   ],
   imports: [
     BrowserModule,
