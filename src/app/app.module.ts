@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -63,6 +63,11 @@ import { CircularityComponent } from './views/circularity/circularity.component'
 import { StartCircularityComponent } from './views/circularity/start/start.component';
 import { CustomerpnComponent } from './views/management/customerpn/customerpn.component';
 import { NewCustomerPNComponent } from './views/management/customerpn/details/details.component';
+import { UploadrpaComponent } from './views/management/uploadrpa/uploadrpa.component';
+import { NewUploadRPAComponent } from './views/management/uploadrpa/details/details.component';
+import localept from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localept, 'pt');
 
 @NgModule({
   declarations: [
@@ -111,7 +116,9 @@ import { NewCustomerPNComponent } from './views/management/customerpn/details/de
     CircularityComponent,
     StartCircularityComponent,
     CustomerpnComponent,
-    NewCustomerPNComponent
+    NewCustomerPNComponent,
+    UploadrpaComponent,
+    NewUploadRPAComponent
   ],
   imports: [
     BrowserModule,
@@ -130,6 +137,7 @@ import { NewCustomerPNComponent } from './views/management/customerpn/details/de
     TemplateModule
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'pt'},
     { provide: HIGHCHARTS_MODULES, useFactory: () => [ more, exporting, solidGauge, drilldown ] } // add as factory to your providers
     , AuthGuard
   ],

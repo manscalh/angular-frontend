@@ -3,7 +3,7 @@
     
   <div class="row">
       <div class="col-md-12">
-          <span class="title" *ngIf="!isLoading">Customer & Partnumber</span>
+          <span class="title" *ngIf="!isLoading">Upload SSD RPA</span>
           <ngx-skeleton-loader count="1" appearance="line" *ngIf="isLoading"></ngx-skeleton-loader>
       </div>
   </div>
@@ -38,7 +38,9 @@
                           <!-- <th scope="col">id</th> -->
                           <th scope="col">Customer</th>
                           <th scope="col">Partnumber</th>
-                          <th scope="col">Cadastro</th>                    
+                          <th scope="col">Quantidade</th>
+                          <th scope="col">Data SSD</th>  
+                          <th scope="col">Type</th>                    
                           <th class="text-right">Registros por páginas:
                               <select (change)="handlePageSizeChange($event)">
                                   <option *ngFor="let size of pageSizes" [ngValue]="size" [selected]="size == perPage">
@@ -54,9 +56,11 @@
                               currentPage: currentPage,
                               totalItems: total }" >
                               <!-- <td scope="row">{{item['id']}}</td> -->
-                              <td>{{item['customer']}}</td>    
+                              <td>{{item['cliente']}}</td>    
                               <td>{{item['partnumber']}}</td>                            
-                              <td>{{item['createdAt'] | date:"dd/MM/yyyy" : "+04:00" }}</td>
+                              <td>{{item['quantidade']}}</td>
+                              <td>{{ item['data']  | date:"dd/MM/yyyy" : "+04:00" }}</td>
+                              <td>{{item['voo']}}</td>
                               <td>
                                   <button class="btn px-4 custom-bt button-circularity color-button-red float-right" type="button"
                                   (click)="confirmDelete(template,'delete', item)">Excluir</button>

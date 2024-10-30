@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./:/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+
+

@@ -1,4 +1,3 @@
-import { IMenu } from "./menu.model";
 
 export interface ICustomerPN {
     id?: number;

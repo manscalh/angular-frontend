@@ -2,12 +2,24 @@
     <div class="container">
       <ng-container>
         <div class="row mb-3">
-          <div class="col-md-3 pr-2 pl-2 pb-2" *ngFor="let row of getMenus; let i = index">
-            <div class="shadow bg-white rounded" routerLink={{row.url}} (click)="navigate(row.url)">
+
+          <div class="col-md-3 pr-2 pl-2 pb-2">
+            <div class="shadow bg-white rounded" routerLink="/management/customerpn">
                 <div class="card card-home">
                     <div class="card-body text-center">
-                      <img src="./assets/icons/{{row.image}}" width="50px" alt="" >
-                      <h2 class="card-title" style="margin: 0;">{{row.name}}</h2>
+                      <img src="../../../assets/icons/list.svg" width="50px" alt="" >
+                      <h2 class="card-title" style="margin: 0;">Cutomer & Partnumber</h2>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 pr-2 pl-2 pb-2">
+            <div class="shadow bg-white rounded" routerLink="/management/uploadrpa">
+                <div class="card card-home">
+                    <div class="card-body text-center">
+                      <img src="../../../assets/icons/list.svg" width="50px" alt="" >
+                      <h2 class="card-title" style="margin: 0;">Upload SSD</h2>
                     </div>
                 </div>
             </div>

@@ -20,6 +20,8 @@ import { CircularityComponent } from './views/circularity/circularity.component'
 import { StartCircularityComponent } from './views/circularity/start/start.component';
 import { CustomerpnComponent } from './views/management/customerpn/customerpn.component';
 import { NewCustomerPNComponent } from './views/management/customerpn/details/details.component';
+import { UploadrpaComponent } from './views/management/uploadrpa/uploadrpa.component';
+import { NewUploadRPAComponent } from './views/management/uploadrpa/details/details.component';
 
 const routes: Routes = [
   {
@@ -59,6 +61,26 @@ const routes: Routes = [
   {
     path: "management/customerpn/edit/:id",
     component: NewCustomerPNComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "management/uploadrpa",
+    component: UploadrpaComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "management/uploadrpa/details",
+    component: NewUploadRPAComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "management/uploadrpa/create",
+    component: NewUploadRPAComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "management/uploadrpa/edit/:id",
+    component: NewUploadRPAComponent,
     canActivate: [AuthGuard],
   },
   {

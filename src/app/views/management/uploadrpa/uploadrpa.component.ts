@@ -1,29 +1,28 @@
-
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { PreserveSearchUserService } from 'src/app/core/filters/user.filter';
-import { ICustomerPN } from 'src/app/core/models';
+import { IUploadRPA } from 'src/app/core/models';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { CustomerPNService } from 'src/app/core/services/customerpn.service';
 import { SnackbarService } from 'src/app/core/services/snackbar.service';
+import { UploadRPAService } from 'src/app/core/services/uploadrpa.service';
 
 @Component({
-  selector: 'app-customerpn',
-  templateUrl: './customerpn.component.html',
-  styleUrls: ['./customerpn.component.scss']
+  selector: 'app-uploadrpa',
+  templateUrl: './uploadrpa.component.html',
+  styleUrls: ['./uploadrpa.component.scss']
 })
-export class CustomerpnComponent implements OnInit {
+export class UploadrpaComponent implements OnInit {
 
-  private url_crud: string = "/management/customerpn";
+  private url_crud: string = "/management/uploadrpa";
   public isVisibleCard: boolean = true;
   public isLoading = true;
   public isLoadingSearch = false;
   public objList = [];
   public formObject!: FormGroup;
   public msg: string = "No data";
-  public customerpn: ICustomerPN;
+  public uploadrpa: IUploadRPA;
   modalRef?: BsModalRef;
   private objDelete = 0;
   public p: number = 1;
@@ -36,7 +35,7 @@ export class CustomerpnComponent implements OnInit {
   constructor(
     private authservice: AuthService,
     private router: Router,
-    private service: CustomerPNService,
+    private service: UploadRPAService,
     private formBuilder: FormBuilder,
     private snackbarService: SnackbarService,
     private modalService: BsModalService,
@@ -65,6 +64,7 @@ export class CustomerpnComponent implements OnInit {
   }
 
   handlerSearch(){
+
     if(this.formObject.invalid){
       return;
     }
@@ -135,9 +135,9 @@ export class CustomerpnComponent implements OnInit {
   get formControl() { return this.formObject.controls; }
 
   private getAll(){
-
+    
     let _filter: string = this.formObject.value['objectFilter'];
-
+   
     this.getAllByFilter(_filter, this.currentPage, this.perPage);
 
   }
@@ -167,3 +167,4 @@ export class CustomerpnComponent implements OnInit {
     this.total = meta.total;
   }
 }
+
